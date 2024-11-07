@@ -1,0 +1,395 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: white;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #0C0C0C;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    color: #00D1B2; /* Verde-azulado */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 1.5rem;
+}
+
+.nav-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00D1B2;
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(120deg, #0C0C0C, #1C1C1C);
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: #00D1B2;
+    margin-bottom: 0.5rem;
+}
+
+.banner p {
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+/* Dashboard */
+.dashboard {
+    padding: 2rem;
+    background-color: #0C0C0C;
+}
+
+.dashboard h2 {
+    color: #00D1B2;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Seção de Seleção de Dados */
+#data-selection {
+    background-color: #2C2C2C; /* Fundo mais escuro */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    margin: 40px auto;
+    width: 80%;
+    max-width: 800px;
+    transition: all 0.3s ease;
+}
+
+#data-selection h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00D1B2; /* Cor futurista para o título */
+}
+
+/* Labels */
+#data-selection label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #00D1B2; /* Cor do texto */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#data-selection label:hover {
+    color: #009e8e; /* Efeito hover na cor */
+}
+
+/* Campos de seleção (select) */
+#dataSelect, #chartType {
+    background-color: #1e1e1e;
+    border: 1px solid #00D1B2;
+    border-radius: 10px;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 1rem;
+    width: 100%;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+#dataSelect:focus, #chartType:focus {
+    outline: none;
+    background-color: #121212;
+    border-color: #00B0A8;
+    box-shadow: 0 0 10px rgba(0, 209, 178, 0.7);
+}
+
+/* Botão Gerar Gráfico */
+#generateChart {
+    background-color: #00D1B2;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 209, 178, 0.5);
+}
+
+#generateChart:hover {
+    background-color: #009e8e;
+    transform: translateY(-2px);
+    box-shadow: 0px 10px 20px rgba(0, 209, 178, 0.7);
+}
+
+/* Texto interativo */
+#generateChart:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 8px rgba(0, 209, 178, 0.3);
+}
+
+/* Área de Visualização dos Gráficos */
+#visualization {
+    background-color: #1E1E1E;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    margin-top: 40px;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#visualization h2 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #00D1B2; /* Cor futurista para o título */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Canvas (Gráfico) */
+canvas {
+    border-radius: 15px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    width: 100% !important;
+    height: 300px; /* Definindo uma altura padrão para o gráfico */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos Gerais */
+.navbar {
+    background-color: #00D1B2;  /* Verde-azulado */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Banner */
+.banner {
+    background-color: #333;
+    color: #00D1B2;
+    padding: 50px 0;
+    text-align: center;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.banner.fade-in {
+    opacity: 1;
+}
+
+/* Seção de Extração de Dados */
+#extract {
+    background-color: #1c1c1c;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+#extract h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #00D1B2;
+    margin-bottom: 20px;
+}
+
+#uploadForm {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#uploadForm input[type="file"] {
+    padding: 10px;
+    border: 2px solid #00D1B2;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+}
+
+#uploadForm button {
+    padding: 10px 20px;
+    background-color: #00D1B2;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#uploadForm button:hover {
+    background-color: #007d69;
+}
+
+/* Seção de Filtro de Dados */
+#filter {
+    background-color: #1c1c1c;
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+#filter h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #00D1B2;
+    margin-bottom: 20px;
+}
+
+#filter label {
+    color: #aaa;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+#filter input[type="text"] {
+    padding: 10px;
+    border: 2px solid #00D1B2;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    width: 300px;
+}
+
+#filter input[type="text"]:focus {
+    border-color: #00D1B2;  /* Cor verde-azulada para o foco */
+}
+
+
+/* Seção de Contato */
+#contact {
+    background-color: #121212;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #00D1B2; /* Cor futurista */
+    margin-bottom: 20px;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #00D1B2;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #00D1B2;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #00B0A8;
+    box-shadow: 0 0 10px rgba(0, 209, 178, 0.7);
+}
+
+.btn-submit {
+    background-color: #00D1B2;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #009e8e;
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}

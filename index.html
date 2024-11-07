@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <!-- Link para o CSS na raiz do projeto -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">DataVis</div>
+            <ul class="nav-links">
+                <li><a href="#extract">Extração</a></li>
+                <li><a href="#transform">Transformação</a></li>
+                <li><a href="#visualize">Visualização</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <h1>Extração e Visualização de Dados Futurística</h1>
+        <p>Explore, transforme e visualize dados de maneira inovadora.</p>
+    </section>
+
+    <!-- Dashboard Area -->
+    <section id="dashboard" class="dashboard">
+        <h2>Dashboard Interativo</h2>
+        <div class="dashboard-grid">
+            <!-- Cards ou gráficos interativos serão inseridos aqui -->
+        </div>
+    </section>
+
+    <!-- Extração de Dados -->
+    <section id="extract">
+        <h2>Extração de Dados</h2>
+        <form id="uploadForm">
+            <input type="file" id="fileInput" accept=".csv, .json" />
+            <button type="submit">Enviar Arquivo</button>
+        </form>
+    </section>
+
+    <!-- Filtrar Dados -->
+    <section id="filter">
+        <h2>Filtrar Dados</h2>
+        <label for="filterInput">Filtrar por Nome:</label>
+        <input type="text" id="filterInput" placeholder="Digite o nome" />
+    </section>
+
+    <!-- Escolha dos Dados e Tipo de Gráfico -->
+    <section id="data-selection">
+        <h2>Escolha os Dados</h2>
+        <label for="dataSelect">Selecione o Conjunto de Dados:</label>
+        <select id="dataSelect">
+            <option value="set1">Conjunto de Dados 1</option>
+            <option value="set2">Conjunto de Dados 2</option>
+            <option value="set3">Conjunto de Dados 3</option>
+        </select>
+        
+        <label for="chartType">Escolha o Tipo de Gráfico:</label>
+        <select id="chartType">
+            <option value="bar">Gráfico de Barras</option>
+            <option value="line">Gráfico de Linhas</option>
+            <option value="pie">Gráfico de Pizza</option>
+        </select>
+
+        <!-- Caixa de Modelos de Gráficos -->
+        <div id="chartModels" class="chart-models">
+            <div id="barChartModel" class="chart-model">
+                <h3>Modelo Gráfico de Barras</h3>
+                <canvas id="barPreviewCanvas"></canvas>
+            </div>
+            <div id="lineChartModel" class="chart-model">
+                <h3>Modelo Gráfico de Linha</h3>
+                <canvas id="linePreviewCanvas"></canvas>
+            </div>
+            <div id="pieChartModel" class="chart-model">
+                <h3>Modelo Gráfico de Pizza</h3>
+                <canvas id="piePreviewCanvas"></canvas>
+            </div>
+        </div>
+
+        <button id="generateChart">Gerar Gráfico</button>
+    </section>
+
+    <!-- Canvas para exibição do gráfico final -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Entre em Contato</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" required placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem</label>
+                    <textarea id="message" name="message" required placeholder="Sua mensagem"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
+            <div id="status-message" class="status-message"></div>
+        </div>
+    </section>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+       
